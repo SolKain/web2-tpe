@@ -60,6 +60,7 @@ class MotoController{
 
     function editMoto($idMoto){
         $this->authHelper->checkLoggedIn();
+        
         $color = $_POST['color'];
         $cilindrada = $_POST['cilindrada'];
         $tanque = $_POST['tanque'];
@@ -69,8 +70,9 @@ class MotoController{
     }  
 
     function goToEditMoto($id){
+        $tipos = $this -> tipoModel ->listTipoMoto();
         $this->authHelper->checkLoggedIn();
-        $this->view->showFormularioEdit($id);
+        $this->view->showFormularioEdit($id,$tipos);
     }
     
 }

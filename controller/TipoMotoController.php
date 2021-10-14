@@ -9,10 +9,10 @@ class tipoMotoController
     private $model;
     private $authHelper;
 
-    function getTiposMotos()
+    function getTiposMotos($error = "")
     {
         $tiposMotos = $this->model->listTipoMoto();
-        $this->view->showTipoMotos($tiposMotos, "No se puede borrar");
+        $this->view->showTipoMotos($tiposMotos, $error);
     }
 
     function __construct()
@@ -44,7 +44,8 @@ class tipoMotoController
         try {
             $this->model->DeleteTipoMotoPorID($id);
         } catch(Exception $e){
-            echo $e;
+            $this->getTiposMotos("No se puede borrar - Hay motos usando este terreno");
+            die();
         }
         header("Location: ". TIPOS);
     }

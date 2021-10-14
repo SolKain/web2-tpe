@@ -1,6 +1,9 @@
  {include file="templates/header.tpl"}
 
 <section class="contenedor_tabla">
+</div>
+    <h4 class= error>{$error}</h4>
+</div>
     <table class="tabla">
         <thead>
             <tr>

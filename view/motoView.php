@@ -26,8 +26,9 @@ class MotoView{
 
     }
 
-    function showFormularioEdit($idMoto){
+    function showFormularioEdit($idMoto,$tipos){
         $this->smarty->assign('idMoto', $idMoto);
+        $this->smarty->assign('tipos', $tipos);
         $this->smarty->assign('logout', $this->authHelper->isLoggedIn());
         $this->smarty->display('templates/formEditarMoto.tpl');
     }

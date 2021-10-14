@@ -6,8 +6,4 @@
     </div> 
 </form>
 
-</div>
-    <h4 class= error>  {$error}</h4>
-</div>
-
  {include file="templates/footer.tpl"}
